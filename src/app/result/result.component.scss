@@ -1,0 +1,80 @@
+.resultcontent {
+  display: grid;
+  grid-template-columns: 300px 2.5% 2.5% 1fr;
+  grid-template-areas: "criteria slider spacer results";
+  //   grid-template-columns: auto;
+  margin: 50px 0;
+  transition: all .3s;
+
+  &.fullscreen {
+    // grid-template-columns: 0 2.5% 2.5% 95%;
+
+    .criteria {
+      width: 0;
+      transform: translateX(-300px);
+    }
+
+    .slidecolumn,
+    .spacer {
+      transform: translateX(-300px);
+    }
+
+    .slidecolumn i {
+      transform: rotate(180deg);
+    }
+
+    .result {
+      width: calc(100% + 300px);
+      transform: translateX(-300px);
+    }
+  }
+
+  .criteria {
+    width: 300px;
+    grid-area: criteria;
+    transition: all .3s;
+    // background-color: red;
+    ;
+    // width: 30%;
+
+    .filters {
+      margin-top: 20px;
+
+      .filter {
+        background-color: #f3f3f3;
+        padding: 10px;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .slidecolumn {
+    // width: 2.5%;
+    transition: all .3s;
+
+    // border-right: 1px solid #333;
+    box-shadow: 3px 0px 3px -3px #333;
+    // padding-right: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    i {
+      padding: 8px;
+      box-shadow: 0px 0px 2px 0px #333;
+        transition: all .3;
+    }
+  }
+
+  .spacer {
+    // width: 2.5%;
+    transition: all .3s;
+
+  }
+
+  .result {
+    grid-area: results;
+    transition: all .3s;
+    // width: 65%;
+  }
+}

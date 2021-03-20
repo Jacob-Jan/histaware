@@ -1,0 +1,28 @@
+<mat-form-field>
+  <!-- <mat-label>{{label}}</mat-label> -->
+  <input type="text" #input placeholder="{{placeholder}}" aria-label="Number" matInput #trigger="matAutocompleteTrigger"
+    (input)="inputchange($event, auto);autocompletevalidator(input)" [formControl]="userControl"
+    (keydown.enter)="chooseFirstOption(auto);trigger.closePanel();" [matAutocomplete]="auto"
+    (ngModelChange)="optiontyped($event)"/>
+  <!-- $event.target.blur() -->
+  <mat-hint *ngIf="error" class="autocompleteerror">Please select an option.</mat-hint>
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"
+    (optionSelected)="optionselected($event, $event.option, false)">
+    <mat-option *ngFor="let option of filteredoptions" [value]="option" matTooltip="{{option.term}}"
+      matTooltipPosition="right">
+      <mat-checkbox *ngIf="!option.add && multiselect" [checked]="option.selected"
+        (change)="optionselected($event, option, true)" (click)="$event.stopPropagation()">
+        {{ option.term }}
+      </mat-checkbox>
+      <ng-container *ngIf="!option.add && !multiselect">
+        {{ option.term }}
+      </ng-container>
+      <ng-container *ngIf="strings && !multiselect">
+        {{ option }}
+      </ng-container>
+      <ng-container *ngIf="option.add">
+        + {{ option.term }}
+      </ng-container>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

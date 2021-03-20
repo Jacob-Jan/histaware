@@ -1,0 +1,36 @@
+<div [ngClass]="{'fullscreen': this.fullscreen}" class="resultcontent">
+    <div class="criteria">
+        <div class="inner" *ngIf="!this.fullscreen">
+            <mat-slide-toggle>Advanced options</mat-slide-toggle>
+            <div class="filters">
+                <div class="filter" *ngFor="let filter of filters; let i = index">
+                    filter {{i+1}}
+                </div>
+                <button mat-button class="card add" (click)="filters.push({})">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="slidecolumn">
+        <i class="fas fa-chevron-left" (click)="fullscreentoggle()" ></i>
+    </div>
+    <div class="spacer"></div>
+    <div class="result">
+        result
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
