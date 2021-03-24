@@ -5,8 +5,17 @@
   </a>
 </header>
 <div class="upperbuttons">
-  <a *ngIf="router.url != '/'" class="back" routerLink="/">back</a>
-  <div class="language">language</div>
+  <div class="back">
+    <a *ngIf="router.url != '/'" class="back" routerLink="/"><i class="fas fa-arrow-left"></i></a>
+  </div>
+  <div class="language" (click)="showlanguagemenu = !showlanguagemenu">
+    {{activelanguage.term}}
+    <div class="dropdown" *ngIf="showlanguagemenu">
+      <div class="language" *ngFor="let language of languages" (click)="selectlanguage(language)">
+        {{language.term}}
+      </div>
+    </div>
+  </div>
 </div>
 <div class="content">
   <router-outlet></router-outlet>

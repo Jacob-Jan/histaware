@@ -1,36 +1,39 @@
 <div [ngClass]="{'fullscreen': this.fullscreen}" class="resultcontent">
-    <div class="criteria">
-        <div class="inner" *ngIf="!this.fullscreen">
-            <mat-slide-toggle>Advanced options</mat-slide-toggle>
-            <div class="filters">
-                <div class="filter" *ngFor="let filter of filters; let i = index">
-                    filter {{i+1}}
-                </div>
-                <button mat-button class="card add" (click)="filters.push({})">+</button>
-            </div>
+  <div class="criteria">
+    <div class="inner" *ngIf="!this.fullscreen">
+      <mat-slide-toggle (change)="advanced = $event.checked">Advanced options</mat-slide-toggle>
+      <div class="searchqueries">
+        <div class="searchquery" *ngFor="let searchquery of searchqueries; let i = index">
+          <!-- <h2>Query {{i+1}}</h2> -->
+          <i (click)="deletequery(i)" class="fas fa-trash-alt delete continuous smallbutton"></i>
+          <app-autocomplete [multiselect]="false" [options]="topicoptions" [placeholder]="'Topic'"></app-autocomplete>
+          <app-autocomplete [multiselect]="true" [options]="geographies" [placeholder]="'Geography'"></app-autocomplete>
+          <app-autocomplete [multiselect]="true" [options]="newspapers" [placeholder]="'Newspapers'"></app-autocomplete>
+          <!-- time range -->
         </div>
+        <button mat-button class="card add" (click)="searchqueries.push({})">
+          <i class="fas fa-plus"></i>
+          Add search query
+        </button>
+      </div>
     </div>
-    <div class="slidecolumn">
-        <i class="fas fa-chevron-left" (click)="fullscreentoggle()" ></i>
-    </div>
-    <div class="spacer"></div>
-    <div class="result">
-        result
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+  </div>
+  <div class="slidecolumn">
+    <i class="fas fa-chevron-left" (click)="fullscreentoggle()"></i>
+  </div>
+  <div class="spacer"></div>
+  <div class="result">
+    <mat-tab-group *ngIf="true" animationDuration="200ms" dynamicHeight>
+      <mat-tab label="Line Chart">
+        line chart
+        <button mat-button>Export</button>
+      </mat-tab>
+      <mat-tab label="Map Plot">
+        map plot
+        <button mat-button>Export</button>
+      </mat-tab>
+    </mat-tab-group>
+
+
+  </div>
 </div>

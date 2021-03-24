@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ResultComponent } from './result/result.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -36,6 +37,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatButtonModule,
     MatTabsModule,
     MatTableModule,
+    MatMenuModule,
     MatAutocompleteModule,
     MatTooltipModule,
     BrowserAnimationsModule,

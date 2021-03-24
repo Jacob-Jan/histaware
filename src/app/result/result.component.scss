@@ -3,8 +3,9 @@
   grid-template-columns: 300px 2.5% 2.5% 1fr;
   grid-template-areas: "criteria slider spacer results";
   //   grid-template-columns: auto;
-  margin: 50px 0;
+  margin-top: 20px;
   transition: all .3s;
+  min-height: 300px;
 
   &.fullscreen {
     // grid-template-columns: 0 2.5% 2.5% 95%;
@@ -33,17 +34,34 @@
     width: 300px;
     grid-area: criteria;
     transition: all .3s;
+
+    .mat-slide-toggle {
+      height: 49px;
+    }
+
     // background-color: red;
-    ;
+    // ;
     // width: 30%;
 
-    .filters {
+    .searchqueries {
       margin-top: 20px;
 
-      .filter {
+      .searchquery {
         background-color: #f3f3f3;
         padding: 10px;
         margin: 10px 0;
+        position: relative;
+
+        i.smallbutton {
+          position: absolute;
+          padding: 3px;
+          cursor: pointer;
+          border-radius: 2px;
+          background: #fff;
+          box-shadow: 0px 2px 3px -3px black;
+          top: 15px;
+          right: 5px;
+        }
       }
     }
   }
@@ -62,7 +80,8 @@
     i {
       padding: 8px;
       box-shadow: 0px 0px 2px 0px #333;
-        transition: all .3;
+      transition: all .3;
+      cursor: pointer;
     }
   }
 
