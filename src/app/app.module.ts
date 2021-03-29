@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { MatRippleModule } from '@angular/material/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,11 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AutocompleteComponent } from './addons/autocomplete/autocomplete.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AutocompleteComponent } from './addons/autocomplete/autocomplete.component';
 import { FormsModule } from '@angular/forms';
-import { MatRippleModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
+import { CdkTableModule } from "@angular/cdk/table";
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 @NgModule({
@@ -34,12 +37,15 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatFormFieldModule,
     AppRoutingModule,
     MatInputModule,
+    CdkTableModule,
+    ScrollingModule,
     MatButtonModule,
     MatTabsModule,
     MatTableModule,
     MatMenuModule,
     MatAutocompleteModule,
     MatTooltipModule,
+    TableVirtualScrollModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,8 +1,25 @@
 <header>
   <a routerLink="/" class="logo">
     <img src="../assets/delpher.png" alt="logo">
-
   </a>
+  <nav id="js-header__nav" class="menu-main ">
+    <ul class="menu-main__list">
+      <li class="menu-main__item js-focusable">
+        <a class="favourites menu-main__link " title="Favorieten" href="https://delpher.nl/nl/kranten/favourites" tabindex="0">
+          Favorieten</a>
+      </li>
+      <li class="storables-context-menu menu-main__item js-focusable">
+        <a class="js-menu-main__link--visited menu-main__link  menu-main__link--disabled menu-main--desktop" title="Bekeken objecten" data-href="https://delpher.nl/nl/kranten/visited" aria-expanded="false" aria-controls="visited-alert" aria-disabled="true" tabindex="0">
+          Bekeken objecten</a>
+      </li>
+      <li class="menu-main__item js-focusable">
+        <a title="Instellingen" class="menu-main__link " href="https://delpher.nl/nl/kranten/settings" tabindex="0">Instellingen</a>
+      </li>
+      <li class="menu-main__item js-focusable">
+        <a title="Handleiding" class="menu-main__link " href="https://delpher.nl/nl/platform/pages/helpitems" tabindex="0">Handleiding</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 <div class="upperbuttons">
   <div class="back">

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'HistAware';
   public showlanguagemenu: boolean = false;
-  public activelanguage: {id, term} = {id: 0, term: "NL"};
+  public activelanguage: {id, term} = {id: 1, term: "EN"};
   public languages = [{id: 0, term: "NL"}, {id: 1, term: "EN"}]
   constructor(public router: Router) {}
 

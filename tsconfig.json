@@ -17,6 +17,8 @@
     "target": "es2015",
     "module": "es2020",
     "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "strictPropertyInitialization": false,
     "lib": [
       "es2018",
